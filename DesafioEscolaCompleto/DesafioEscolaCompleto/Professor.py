@@ -1,4 +1,4 @@
-from PessoaFisica import PessoaFisica
+from PessoaFisica import *
 
 class Professor(PessoaFisica):
     def __init__(self, nome, cpf, rg, dataNascimento, salario, formacao, tipoDeVinculo):
@@ -6,13 +6,16 @@ class Professor(PessoaFisica):
         self.salario = salario
         self.formacao = formacao
         self.tipoDeVinculo = tipoDeVinculo
+        self.codigoAcesso = self.cpf
 
 
-    def acessarEscola(self, cpf):
+    def acessarEscola(self, codigo):
 
         # Fazer condição com cpf e exibir mensagem
-        if cpf == self.cpf:
+        if codigo == self.codigoAcesso:
             print(f"Boa aula professor(a) {self.nome}!")
+        else:
+            return "Acesso negado."
         return super().acessarEscola()
 
 
@@ -26,9 +29,9 @@ Salário: {self.salario}\nFormação: {self.formacao}\nTipo de Vínculo: {self.t
 
 ### TESTES ###
     
-teste1 = Professor("Antonio", "123", "123", "123", 123, "123", "123")
-teste2 = Professor("Jonas", "124", "123", "123", 123, "123", "123")
+# teste1 = Professor("Antonio", "123", "123", "123", 123, "123", "123")
+# teste2 = Professor("Jonas", "124", "123", "123", 123, "123", "123")
 
-teste1.acessarEscola("123")
+# teste1.acessarEscola("123")
 
-print(teste1)
+# print(teste1)

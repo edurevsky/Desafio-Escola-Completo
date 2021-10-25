@@ -1,0 +1,8 @@
+Nome: João
+CPF: 12345678902
+RG: 12345678902
+Data de Nascimento: 02/02/02
+Salário: 3000.0
+Cargo: Zelador
+Horário de Trabalho: 6:30 às 12:30
+
