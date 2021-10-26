@@ -1,8 +1,0 @@
-Nome: Maria
-CPF: 12345678903
-RG: 12345678903
-Data de Nascimento: 03/03/03
-Salário: 3000.0
-Formação: Mestrado
-Tipo de Vínculo: None
-
