@@ -1,0 +1,1 @@
+# Para iniciar o "sistema" execute o arquivo "Main.py"
