@@ -22,6 +22,8 @@ escola = Escola()
 # Funções
 
 def registrarAluno():
+    system("cls")
+
     # Informações
     nome = input("Digite o nome: ")
     cpf = input("Digite o CPF: ")
@@ -43,6 +45,8 @@ def registrarAluno():
 
 
 def registrarProfessor():
+    system("cls")
+
     # Informações
     nome = input("Digite o nome: ")
     cpf = input("Digite o CPF: ")
@@ -64,6 +68,8 @@ def registrarProfessor():
 
 
 def registrarFuncionario():
+    system("cls")
+    
     # Informações
     nome = input("Digite o nome: ")
     cpf = input("Digite o CPF: ")

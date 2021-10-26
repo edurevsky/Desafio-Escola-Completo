@@ -3,10 +3,25 @@ from PessoaFisica import *
 class Professor(PessoaFisica):
     def __init__(self, nome, cpf, rg, dataNascimento, salario, formacao, tipoDeVinculo):
         super().__init__(nome, cpf, rg, dataNascimento)
-        self.salario = salario
-        self.formacao = formacao
-        self.tipoDeVinculo = tipoDeVinculo
+        self.__salario = salario
+        self.__formacao = formacao
+        self.__tipoDeVinculo = tipoDeVinculo
         self.codigoAcesso = self.cpf
+
+
+    @property
+    def salario(self):
+        return self.__salario
+
+    
+    @property
+    def formacao(self):
+        return self.__formacao
+
+
+    @property
+    def tipoDeVinculo(self):
+        return self.__tipoDeVinculo
 
 
     def acessarEscola(self, codigo):

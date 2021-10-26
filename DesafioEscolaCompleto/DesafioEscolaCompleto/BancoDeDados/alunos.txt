@@ -6,3 +6,19 @@ CGM: 11111111
 Turma: 1ºA
 Turno: Tarde
 
+Nome: Ciclano
+CPF: 000.000.000-00
+RG: 000.000.000-00
+Data de Nascimento: 00/00/00
+CGM: 00000000
+Turma: 1ºA
+Turno: Tarde
+
+Nome: Beltrano
+CPF: 999.999.999-99
+RG: 999.999.999-99
+Data de Nascimento: 99/99/99
+CGM: 99999999
+Turma: 2ºC
+Turno: Noite
+

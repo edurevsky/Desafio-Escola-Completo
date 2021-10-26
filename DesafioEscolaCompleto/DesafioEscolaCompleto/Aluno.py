@@ -3,11 +3,26 @@ from PessoaFisica import *
 class Aluno(PessoaFisica):
     def __init__(self, nome, cpf, rg, dataNascimento, cgm, turma, turno):
         super().__init__(nome, cpf, rg, dataNascimento)
-        self.cgm = cgm
-        self.turma = turma
-        self.turno = turno
+        self.__cgm = cgm
+        self.__turma = turma
+        self.__turno = turno
         self.codigoAcesso = self.cgm
-        
+
+    
+    @property
+    def cgm(self):
+        return self.__cgm
+
+
+    @property
+    def turma(self):
+        return self.__turma
+
+
+    @property
+    def turno(self):
+        return self.__turno
+    
 
     def acessarEscola(self, codigo):
 

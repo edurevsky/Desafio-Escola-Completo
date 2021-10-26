@@ -3,10 +3,25 @@ from PessoaFisica import *
 class Funcionario(PessoaFisica):
     def __init__(self, nome, cpf, rg, dataNascimento, salario, cargo, horarioTrabalho):
         super().__init__(nome, cpf, rg, dataNascimento)
-        self.salario = salario
-        self.cargo = cargo
-        self.horarioTrabalho = horarioTrabalho
+        self.__salario = salario
+        self.__cargo = cargo
+        self.__horarioTrabalho = horarioTrabalho
         self.codigoAcesso = self.cpf
+
+
+    @property
+    def salario(self):
+        return self.__salario
+
+
+    @property
+    def cargo(self):
+        return self.__cargo
+
+
+    @property
+    def horarioTrabalho(self):
+        return self.__horarioTrabalho
 
 
     def acessarEscola(self, codigo):
