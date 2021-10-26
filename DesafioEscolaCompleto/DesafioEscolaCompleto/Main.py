@@ -92,7 +92,9 @@ def acsEscola():
 
 def listarTodos():
     system("cls")
-    escola.listar()
+    escola.listarAlunos()
+    escola.listarProfessores()
+    escola.listarFuncionarios()
 
 
 # Main

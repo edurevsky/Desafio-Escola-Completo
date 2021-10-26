@@ -9,8 +9,7 @@ from ProfessorDAO import ProfessorDAO
 # Class "Escola" deve agir como uma lista
 class Escola(object):
     def __init__(self):
-        self.__nome = "Escola Estadual Programadores do Futuro"
-
+        self.__nome = "--- Escola Estadual Programadores do Futuro ---"
         self.__pessoas = []
 
     def nomeEscola(self):
@@ -27,8 +26,21 @@ class Escola(object):
  
         # Adicionar Mensagem de acesso negado ***
 
-    def listar(self):
-        with open("DesafioEscolaCompleto/BancoDeDados/dados.txt", encoding="UTF-8", mode="r") as arquivo:
+    def listarAlunos(self):
+        with open("DesafioEscolaCompleto/BancoDeDados/alunos.txt", encoding="UTF-8", mode="r") as arquivo:
+            dados = arquivo.read()
+            print(dados)
+        arquivo.close()
+
+    def listarProfessores(self):
+        with open("DesafioEscolaCompleto/BancoDeDados/professores.txt", encoding="UTF-8", mode="r") as arquivo:
+            dados = arquivo.read()
+            print(dados)
+        arquivo.close()
+
+    
+    def listarFuncionarios(self):
+        with open("DesafioEscolaCOmpleto/BancoDeDados/funcionarios.txt", encoding="UTF-8" , mode="r") as arquivo:
             dados = arquivo.read()
             print(dados)
         arquivo.close()
@@ -45,6 +57,8 @@ class Escola(object):
 
 
 ### TESTES ###
+
+
 
 # Eduardo = Aluno("Eduardo", "12345678901", "12345678901", "01/01/01", "12345678", "3ºA", "Manhã")
 # Pedro = Aluno("Pedro", "12345678900", "12345678900", "00/00/00", "123345670", "", "")

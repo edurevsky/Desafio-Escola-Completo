@@ -1,0 +1,8 @@
+Nome: Fulano
+CPF: 111.111.111-11
+RG: 111.111.111-11
+Data de Nascimento: 01/01/01
+CGM: 11111111
+Turma: 1ºA
+Turno: Tarde
+
