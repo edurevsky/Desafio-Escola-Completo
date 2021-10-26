@@ -29,7 +29,7 @@ CGM: {self.cgm}\nTurma: {self.turma}\nTurno: {self.turno}\n"
 
 ### TESTES ###
 
-teste1 = Aluno("Lucas", "123", "123", "01/01/01", "001", "123", "123")
+# teste1 = Aluno("Lucas", "123", "123", "01/01/01", "001", "123", "123")
 
 # teste2 = Aluno("Luis", "123", "123", "01/01/01", "002", "123", "123")
 

@@ -10,7 +10,11 @@ from ProfessorDAO import ProfessorDAO
 class Escola(object):
     def __init__(self):
         self.__nome = "Escola Estadual Programadores do Futuro"
+
         self.__pessoas = []
+
+    def nomeEscola(self):
+        return self.__nome
 
 
     def adicionarPessoa(self, pessoa):
@@ -22,6 +26,13 @@ class Escola(object):
             pessoa.acessarEscola(codigoAcesso)
  
         # Adicionar Mensagem de acesso negado ***
+
+    def listar(self):
+        with open("DesafioEscolaCompleto/BancoDeDados/dados.txt", encoding="UTF-8", mode="r") as arquivo:
+            dados = arquivo.read()
+            print(dados)
+        arquivo.close()
+
 
     def __getitem__(self, pessoa):
         print(self.__pessoas[pessoa])
@@ -35,23 +46,24 @@ class Escola(object):
 
 ### TESTES ###
 
-Eduardo = Aluno("Eduardo", "12345678901", "12345678901", "01/01/01", "12345678", "3ºA", "Manhã")
-Pedro = Aluno("Pedro", "12345678900", "12345678900", "00/00/00", "123345670", "", "")
-Joao = Funcionario("João", "12345678902", "12345678902", "02/02/02", 3000.00, "Zelador", "6:30 às 12:30")
-Maria = Professor("Maria", "12345678903", "12345678903", "03/03/03", 3000.00, "Mestrado", None)
+# Eduardo = Aluno("Eduardo", "12345678901", "12345678901", "01/01/01", "12345678", "3ºA", "Manhã")
+# Pedro = Aluno("Pedro", "12345678900", "12345678900", "00/00/00", "123345670", "", "")
+# Joao = Funcionario("João", "12345678902", "12345678902", "02/02/02", 3000.00, "Zelador", "6:30 às 12:30")
+# Maria = Professor("Maria", "12345678903", "12345678903", "03/03/03", 3000.00, "Mestrado", None)
 
-escola = Escola()
+# escola = Escola()
 
-escola.adicionarPessoa(Eduardo)
-escola.adicionarPessoa(Joao)
-escola.adicionarPessoa(Maria)
+# escola.adicionarPessoa(Eduardo)
+# escola.adicionarPessoa(Joao)
+# escola.adicionarPessoa(Maria)
 
-escola.solicitaAcesso("12345678")
+# escola.solicitaAcesso("12345678")
 
-AlunoDAO.salvar(Eduardo)
-AlunoDAO.salvar(Pedro)
+# AlunoDAO.salvar(Eduardo)
+# AlunoDAO.salvar(Pedro)
 
-FuncionarioDAO.salvar(Joao)
-ProfessorDAO.salvar(Maria)
+# FuncionarioDAO.salvar(Joao)
 
-escola.__len__()
+# ProfessorDAO.salvar(Maria)
+
+# escola.__len__()
