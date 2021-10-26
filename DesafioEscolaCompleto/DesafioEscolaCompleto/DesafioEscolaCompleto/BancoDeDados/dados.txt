@@ -1,8 +1,0 @@
-Nome: Jubiscleiton
-CPF: 111.111.111-11
-RG: 111.111.111-11
-Data de Nascimento: 01/01/01
-Salário: 1111
-Cargo: Zelador
-Horário de Trabalho: 6:30 às 12:30
-
