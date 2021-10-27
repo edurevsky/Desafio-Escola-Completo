@@ -1,4 +1,4 @@
-from PessoaFisica import *
+from PessoaFisica import PessoaFisica
 
 class Aluno(PessoaFisica):
     def __init__(self, nome, cpf, rg, dataNascimento, cgm, turma, turno):
@@ -6,9 +6,8 @@ class Aluno(PessoaFisica):
         self.__cgm = cgm
         self.__turma = turma
         self.__turno = turno
-        self.codigoAcesso = self.cgm
 
-    
+
     @property
     def cgm(self):
         return self.__cgm
@@ -18,20 +17,20 @@ class Aluno(PessoaFisica):
     def turma(self):
         return self.__turma
 
-
+    
     @property
     def turno(self):
         return self.__turno
-    
+
 
     def acessarEscola(self, codigo):
 
         # Fazer condição com cgm e exibir mensagem
-        if codigo == self.codigoAcesso:
+        if codigo == self.cgm:
             print(f"Boa aula aluno(a) {self.nome}!")
+            return True
         else:
-            return "Acesso negado."
-        return super().acessarEscola()
+            return False
 
 
     def assistirAula(self):
@@ -44,7 +43,8 @@ CGM: {self.cgm}\nTurma: {self.turma}\nTurno: {self.turno}\n"
 
 ### TESTES ###
 
-# teste1 = Aluno("Lucas", "123", "123", "01/01/01", "001", "123", "123")
+# teste1 = Aluno("asd", "asd", "asd", "asd", "asd", "asd", "asd")
+# print(teste1)
 
 # teste2 = Aluno("Luis", "123", "123", "01/01/01", "002", "123", "123")
 

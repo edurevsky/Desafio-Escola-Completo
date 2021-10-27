@@ -22,3 +22,19 @@ CGM: 99999999
 Turma: 2ºC
 Turno: Noite
 
+Nome: a
+CPF: a
+RG: a
+Data de Nascimento: a
+CGM: a
+Turma: a
+Turno: a
+
+Nome: c
+CPF: c
+RG: c
+Data de Nascimento: c
+CGM: c
+Turma: c
+Turno: c
+

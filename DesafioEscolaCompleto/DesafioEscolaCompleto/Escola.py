@@ -9,7 +9,7 @@ from ProfessorDAO import ProfessorDAO
 # Class "Escola" deve agir como uma lista
 class Escola(object):
     def __init__(self):
-        self.__nome = "--- Escola Estadual Programadores do Futuro ---"
+        self.__nome = ("\033[36m--- Escola Estadual Programadores do Futuro ---")
         self.__pessoas = []
 
     def nomeEscola(self):
@@ -22,15 +22,20 @@ class Escola(object):
 
     def solicitaAcesso(self, codigoAcesso):
         for pessoa in self.__pessoas:
-            pessoa.acessarEscola(codigoAcesso)
+            if pessoa.acessarEscola(codigoAcesso):
+                return True
+        print("Acesso negado!")
+        return False
  
         # Adicionar Mensagem de acesso negado ***
 
+    # Listagem
     def listarAlunos(self):
         with open("DesafioEscolaCompleto/BancoDeDados/alunos.txt", encoding="UTF-8", mode="r") as arquivo:
             dados = arquivo.read()
             print(dados)
         arquivo.close()
+
 
     def listarProfessores(self):
         with open("DesafioEscolaCompleto/BancoDeDados/professores.txt", encoding="UTF-8", mode="r") as arquivo:
@@ -46,6 +51,7 @@ class Escola(object):
         arquivo.close()
 
 
+    # Métodos da listagem
     def __getitem__(self, pessoa):
         print(self.__pessoas[pessoa])
         return self.__pessoas[pessoa]

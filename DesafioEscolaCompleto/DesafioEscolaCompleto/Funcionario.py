@@ -1,4 +1,4 @@
-from PessoaFisica import *
+from PessoaFisica import PessoaFisica
 
 class Funcionario(PessoaFisica):
     def __init__(self, nome, cpf, rg, dataNascimento, salario, cargo, horarioTrabalho):
@@ -6,32 +6,31 @@ class Funcionario(PessoaFisica):
         self.__salario = salario
         self.__cargo = cargo
         self.__horarioTrabalho = horarioTrabalho
-        self.codigoAcesso = self.cpf
 
 
     @property
     def salario(self):
         return self.__salario
 
-
+    
     @property
     def cargo(self):
         return self.__cargo
 
 
     @property
-    def horarioTrabalho(self):
+    def horarioDeTrabalho(self):
         return self.__horarioTrabalho
 
 
     def acessarEscola(self, codigo):
 
         # Fazer condição com cpf e exibir mensagem
-        if codigo == self.codigoAcesso:
+        if codigo == self.cpf:
             print(f"Bom trabalho {self.nome}!")
+            return True
         else:
-            return "Acesso negado."
-        return super().acessarEscola()
+            return False
 
 
     def registrarPonto(self):
@@ -40,11 +39,12 @@ class Funcionario(PessoaFisica):
 
     def __str__(self) -> str:
         return f"Nome: {self.nome}\nCPF: {self.cpf}\nRG: {self.rg}\nData de Nascimento: {self.dataNascimento}\n\
-Salário: {self.salario}\nCargo: {self.cargo}\nHorário de Trabalho: {self.horarioTrabalho}\n"
+Salário: {self.salario}\nCargo: {self.cargo}\nHorário de Trabalho: {self.horarioDeTrabalho}\n"
 
 ### TESTES ###
 
 # teste1 = Funcionario("Joao", "123", "123", "123", 123, "123", "123")
+# print(teste1)
 # teste2 = Funcionario("Pedro", "124", "124", "124", 124, "124", "124")
 
 # # Vou precisar disso depois

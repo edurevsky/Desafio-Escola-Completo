@@ -1,13 +1,13 @@
 from abc import ABCMeta, abstractmethod
 
-class PessoaFisica(ABCMeta):
+class PessoaFisica(metaclass=ABCMeta):
     def __init__(self, nome, cpf, rg, dataNascimento):
         self.__nome = nome
         self.__cpf = cpf
         self.__rg = rg
         self.__dataNascimento = dataNascimento
 
-    
+
     @property
     def nome(self):
         return self.__nome
@@ -22,7 +22,7 @@ class PessoaFisica(ABCMeta):
     def rg(self):
         return self.__rg
 
-
+    
     @property
     def dataNascimento(self):
         return self.__dataNascimento
@@ -33,6 +33,5 @@ class PessoaFisica(ABCMeta):
         pass
 
 
-    def __str__(self) -> str:
-        pass
+
 
