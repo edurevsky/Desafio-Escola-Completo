@@ -116,8 +116,11 @@ if __name__ == "__main__":
         print("[2] - Registrar um NOVO PROFESSOR")
         print("[3] - Registrar um NOVO FUNCIONÁRIO")
         print("[4] - LISTAR TODOS")
-        print("[5] - ACESSAR ESCOLA")
-        print("[6] - SAIR")
+        print("[5] - LISTAR ALUNOS")
+        print("[6] - LISTAR PROFESSORES")
+        print("[7] - LISTAR FUNCIONÁRIOS")
+        print("[8] - ACESSAR ESCOLA")
+        print("[9] - SAIR")
 
         # Condições
         scanner = int(input("Digite o número da sua resposta: "))
@@ -135,12 +138,21 @@ if __name__ == "__main__":
             listarTodos()
 
         elif scanner == 5:
+            escola.listarAlunos()
+
+        elif scanner == 6:
+            escola.listarProfessores()
+
+        elif scanner == 7:
+            escola.listarFuncionarios()
+
+        elif scanner == 8:
             try:
                 acsEscola()
             except:
                 print("Acesso negado!")
 
-        elif scanner == 6:
+        elif scanner == 9:
             exit()
 
         else:

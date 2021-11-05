@@ -1,14 +1,11 @@
+from lib.File import *
+
+arquivo = File("DesafioEscolaCompleto/BancoDeDados/funcionarios.txt")
+
 class FuncionarioDAO(object):
     def salvar(pessoa):
-        with open("DesafioEscolaCompleto/BancoDeDados/funcionarios.txt", encoding="UTF-8", mode="a") as arquivo:
-            arquivo.write(pessoa.__str__())
-            arquivo.write("\n")
-            arquivo.flush()
-        arquivo.close()
+        Appender(arquivo).append(pessoa.__str__(), True)
 
 
     def listar():
-        with open("DesafioEscolaCompleto/BancoDeDados/funcionarios.txt", encoding="UTF-8", mode="r") as arquivo:
-            dados = arquivo.read()
-            print(dados)
-        arquivo.close()
+        Reader(arquivo).ler()

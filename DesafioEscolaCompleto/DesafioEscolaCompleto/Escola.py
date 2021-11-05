@@ -8,6 +8,7 @@ from ProfessorDAO import ProfessorDAO
 
 # Class "Escola" deve agir como uma lista
 class Escola(object):
+    
     def __init__(self):
         self.__nome = ("\033[36m--- Escola Estadual Programadores do Futuro ---")
         self.__pessoas = []
@@ -31,24 +32,13 @@ class Escola(object):
 
     # Listagem
     def listarAlunos(self):
-        with open("DesafioEscolaCompleto/BancoDeDados/alunos.txt", encoding="UTF-8", mode="r") as arquivo:
-            dados = arquivo.read()
-            print(dados)
-        arquivo.close()
-
+        AlunoDAO.listar()
 
     def listarProfessores(self):
-        with open("DesafioEscolaCompleto/BancoDeDados/professores.txt", encoding="UTF-8", mode="r") as arquivo:
-            dados = arquivo.read()
-            print(dados)
-        arquivo.close()
-
+        ProfessorDAO.listar()
     
     def listarFuncionarios(self):
-        with open("DesafioEscolaCOmpleto/BancoDeDados/funcionarios.txt", encoding="UTF-8" , mode="r") as arquivo:
-            dados = arquivo.read()
-            print(dados)
-        arquivo.close()
+        FuncionarioDAO.listar()
 
 
     # Métodos da listagem
