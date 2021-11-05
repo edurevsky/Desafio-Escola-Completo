@@ -1,8 +1,0 @@
-Nome: Gilberto
-CPF: 333.333.333-33
-RG: 333.333.333-33
-Data de Nascimento: 03/03/03
-Salário: 3333.33
-Cargo: Zelador
-Horário de Trabalho: Toda hora todo dia
-
