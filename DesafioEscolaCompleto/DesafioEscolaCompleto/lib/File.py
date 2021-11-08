@@ -33,6 +33,7 @@ class Reader:
             with open(file=self.arquivo.local, mode="r", encoding="UTF-8") as arquivo:
                 dados = arquivo.read()
                 print(dados)
+                return dados
             arquivo.close()
         except FileNotFoundError:
             raise ArquivoNaoEncontrado

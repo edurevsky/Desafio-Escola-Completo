@@ -13,6 +13,7 @@ class Escola(object):
         self.__nome = ("\033[36m--- Escola Estadual Programadores do Futuro ---")
         self.__pessoas = []
 
+
     def nomeEscola(self):
         return self.__nome
 
@@ -22,11 +23,14 @@ class Escola(object):
 
 
     def solicitaAcesso(self, codigoAcesso):
-        for pessoa in self.__pessoas:
+        pessoas = self.carregarPessoas()
+        print(pessoas)
+        for pessoa in pessoas:
             if pessoa.acessarEscola(codigoAcesso):
                 return True
-        print("Acesso negado!")
-        return False
+            else:
+                print("Acesso negado!")
+                return False
  
         # Adicionar Mensagem de acesso negado ***
 
@@ -39,6 +43,18 @@ class Escola(object):
     
     def listarFuncionarios(self):
         FuncionarioDAO.listar()
+
+    def carregarPessoas(self):
+        with open("DesafioEscolaCompleto/BancoDeDados/alunos.csv") as alunos:
+            for cada in alunos:
+                self.__pessoas.append(cada)
+        with open("DesafioEscolaCompleto/BancoDeDados/funcionarios.csv") as funcionarios:
+            for cada in funcionarios:
+                self.__pessoas.append(cada)
+        with open("DesafioEscolaCompleto/BancoDeDados/professores.csv") as professores:
+            for cada in professores:
+                self.__pessoas.append(cada)
+        return self.__pessoas
 
 
     # Métodos da listagem

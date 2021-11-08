@@ -1,6 +1,9 @@
 from lib.File import *
+import json
 
-arquivo = File("DesafioEscolaCompleto/BancoDeDados/alunos.txt")
+
+arquivo = File("DesafioEscolaCompleto/BancoDeDados/alunos.csv")
+
 
 class AlunoDAO(object):
     def salvar(pessoa):
@@ -9,3 +12,4 @@ class AlunoDAO(object):
 
     def listar():
         Reader(arquivo).ler()
+

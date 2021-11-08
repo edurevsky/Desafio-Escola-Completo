@@ -91,10 +91,9 @@ def registrarFuncionario():
 
 
 def acsEscola():
-    system("cls")
+    # system("cls")
     cdgAcs = input("Digite o código de acesso: ")
-    Escola.solicitaAcesso(escola, cdgAcs)
-
+    escola.solicitaAcesso(cdgAcs)
 
 def listarTodos():
     system("cls")
@@ -147,10 +146,7 @@ if __name__ == "__main__":
             escola.listarFuncionarios()
 
         elif scanner == 8:
-            try:
-                acsEscola()
-            except:
-                print("Acesso negado!")
+            acsEscola()
 
         elif scanner == 9:
             exit()

@@ -38,8 +38,7 @@ class Aluno(PessoaFisica):
 
 
     def __str__(self) -> str:
-        return f"Nome: {self.nome} CPF: {self.cpf} RG: {self.rg} Data de Nascimento: {self.dataNascimento}\
- CGM: {self.cgm} Turma: {self.turma} Turno: {self.turno}"
+        return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.cgm},{self.turma},{self.turno}"
 
 ### TESTES ###
 

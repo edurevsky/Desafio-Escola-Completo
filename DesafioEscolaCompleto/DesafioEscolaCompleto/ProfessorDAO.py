@@ -1,6 +1,6 @@
 from lib.File import *
 
-arquivo = File("DesafioEscolaCompleto/BancoDeDados/professores.txt")
+arquivo = File("DesafioEscolaCompleto/BancoDeDados/professores.csv")
 
 class ProfessorDAO(object):
     def salvar(pessoa):
