@@ -38,8 +38,8 @@ class Professor(PessoaFisica):
 
 
     def __str__(self) -> str:
-        return f"Nome: {self.nome}\nCPF: {self.cpf}\nRG: {self.rg}\nData de Nascimento: {self.dataNascimento}\n\
-Salário: {self.salario}\nFormação: {self.formacao}\nTipo de Vínculo: {self.tipoDeVinculo}\n"
+        return f"Nome: {self.nome} CPF: {self.cpf} RG: {self.rg} Data de Nascimento: {self.dataNascimento}\
+ Salário: {self.salario} Formação: {self.formacao} Tipo de Vínculo: {self.tipoDeVinculo}"
 
 ### TESTES ###
     

@@ -38,8 +38,8 @@ class Funcionario(PessoaFisica):
 
 
     def __str__(self) -> str:
-        return f"Nome: {self.nome}\nCPF: {self.cpf}\nRG: {self.rg}\nData de Nascimento: {self.dataNascimento}\n\
-Salário: {self.salario}\nCargo: {self.cargo}\nHorário de Trabalho: {self.horarioDeTrabalho}\n"
+        return f"Nome: {self.nome} CPF: {self.cpf} RG: {self.rg} Data de Nascimento: {self.dataNascimento}\
+ Salário: {self.salario} Cargo: {self.cargo} Horário de Trabalho: {self.horarioDeTrabalho}"
 
 ### TESTES ###
 
