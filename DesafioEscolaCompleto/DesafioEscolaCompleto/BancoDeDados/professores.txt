@@ -1,8 +1,0 @@
-Nome: Professor1
-CPF: 12345678910
-RG: 123345678910
-Data de Nascimento: 01/01/01
-Salário: 10000
-Formação: Mestrado
-Tipo de Vínculo: ?
-
