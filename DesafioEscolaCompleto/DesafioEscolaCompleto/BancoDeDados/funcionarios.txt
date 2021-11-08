@@ -1,8 +1,0 @@
-Nome: zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-CPF: 12345678920
-RG: 12345678920
-Data de Nascimento: 02/02/02
-Salário: -2999999999
-Cargo: None
-Horário de Trabalho: 0
-
