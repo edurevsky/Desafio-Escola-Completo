@@ -1,8 +1,0 @@
-Nome: Aluno1
-CPF: cpf
-RG: rg
-Data de Nascimento: 00/00/00
-CGM: 00000000
-Turma: nao
-Turno: sim
-
