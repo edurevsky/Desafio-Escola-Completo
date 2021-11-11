@@ -39,17 +39,3 @@ class Aluno(PessoaFisica):
 
     def __str__(self) -> str:
         return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.cgm},{self.turma},{self.turno}"
-
-### TESTES ###
-
-# teste1 = Aluno("asd", "asd", "asd", "asd", "asd", "asd", "asd")
-# print(teste1)
-
-# teste2 = Aluno("Luis", "123", "123", "01/01/01", "002", "123", "123")
-
-# lista = [teste1, teste2]
-
-# for aluno in lista:
-#     aluno.acessarEscola("002")
-
-# teste1.acessarEscola("123")

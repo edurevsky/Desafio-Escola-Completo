@@ -76,7 +76,7 @@ class Appender:
                 arquivo.write(texto)
                 if newLine:
                     arquivo.write("\n")
-                arquivo.flush()
-            arquivo.close()
+                    arquivo.flush()
+            # arquivo.close()
         except FileNotFoundError:
             raise ArquivoNaoEncontrado

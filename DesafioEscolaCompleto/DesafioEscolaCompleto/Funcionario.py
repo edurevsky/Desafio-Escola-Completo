@@ -38,18 +38,4 @@ class Funcionario(PessoaFisica):
 
 
     def __str__(self) -> str:
-        return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.salario},{self.cargo},{self.horarioDeTrabalho}"
-
-### TESTES ###
-
-# teste1 = Funcionario("Joao", "123", "123", "123", 123, "123", "123")
-# print(teste1)
-# teste2 = Funcionario("Pedro", "124", "124", "124", 124, "124", "124")
-
-# # Vou precisar disso depois
-# lista = [teste1, teste2]
-
-# for funcionario in lista:
-#     funcionario.acessarEscola("124")
-
-# teste1.acessarEscola("123")
+        return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.salario},{self.cargo},{self.horarioDeTrabalho}\n"

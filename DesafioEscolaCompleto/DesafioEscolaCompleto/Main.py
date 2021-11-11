@@ -106,6 +106,7 @@ def listarTodos():
 
 if __name__ == "__main__":
 
+    escola.carregarPessoas()
     while True:
         
         # Interface

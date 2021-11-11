@@ -38,14 +38,4 @@ class Professor(PessoaFisica):
 
 
     def __str__(self) -> str:
-        return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.salario},{self.formacao},{self.tipoDeVinculo}"
-
-### TESTES ###
-    
-# teste1 = Professor("Antonio", "123", "123", "123", "123", "123", "123")
-# print(teste1)
-# teste2 = Professor("Jonas", "124", "123", "123", 123, "123", "123")
-
-# teste1.acessarEscola("123")
-
-# print(teste1)
+        return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.salario},{self.formacao},{self.tipoDeVinculo}\n"

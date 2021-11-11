@@ -6,33 +6,27 @@ from AlunoDAO import AlunoDAO
 from FuncionarioDAO import FuncionarioDAO
 from ProfessorDAO import ProfessorDAO
 
+import csv
+
 # Class "Escola" deve agir como uma lista
 class Escola(object):
     
     def __init__(self):
         self.__nome = ("\033[36m--- Escola Estadual Programadores do Futuro ---")
-        self.__pessoas = []
-
+        self.pessoas = []
 
     def nomeEscola(self):
         return self.__nome
 
-
     def adicionarPessoa(self, pessoa):
-        self.__pessoas.append(pessoa)
-
+        self.pessoas.append(pessoa)
 
     def solicitaAcesso(self, codigoAcesso):
-        pessoas = self.carregarPessoas()
-        print(pessoas)
-        for pessoa in pessoas:
-            if pessoa.acessarEscola(codigoAcesso):
-                return True
-            else:
-                print("Acesso negado!")
-                return False
- 
-        # Adicionar Mensagem de acesso negado ***
+        i = 0
+        while i < len(self.pessoas):
+            for pessoa in self.pessoas:
+                pessoa.acessarEscola(codigoAcesso)
+                i += 1
 
     # Listagem
     def listarAlunos(self):
@@ -45,51 +39,50 @@ class Escola(object):
         FuncionarioDAO.listar()
 
     def carregarPessoas(self):
-        with open("DesafioEscolaCompleto/BancoDeDados/alunos.csv") as alunos:
-            for cada in alunos:
-                self.__pessoas.append(cada)
-        with open("DesafioEscolaCompleto/BancoDeDados/funcionarios.csv") as funcionarios:
-            for cada in funcionarios:
-                self.__pessoas.append(cada)
-        with open("DesafioEscolaCompleto/BancoDeDados/professores.csv") as professores:
-            for cada in professores:
-                self.__pessoas.append(cada)
-        return self.__pessoas
+        self.carregarAlu()
+        self.carregarFunc()
+        self.carregarProf()
+        print(self.pessoas)
 
+    def carregarAlu(self):
+        # Append alunos na lista
+        with open("DesafioEscolaCompleto/BancoDeDados/alunos.csv") as alunos:
+            reader = csv.reader(alunos)
+            
+            for linha in reader:
+                nome, cpf, rg, dataNascimento, cgm, turma, turno = linha
+
+                aluno = Aluno(nome, cpf, rg, dataNascimento, cgm, turma, turno)
+                self.pessoas.append(aluno)
+
+    def carregarFunc(self):
+        # Append funcionarios na lista
+        with open("DesafioEscolaCompleto/BancoDeDados/funcionarios.csv") as funcionarios:
+            reader = csv.reader(funcionarios)
+
+            for linha in reader:
+                nome, cpf, rg, dataNascimento, salario, cargo, horarioTrabalho = linha
+
+                funcionario = Funcionario(nome, cpf, rg, dataNascimento, salario, cargo, horarioTrabalho)
+                self.pessoas.append(funcionario)
+
+    def carregarProf(self):
+        # Append professores na lista
+        with open("DesafioEscolaCompleto/BancoDeDados/professores.csv") as professores:
+            reader = csv.reader(professores)
+
+            for linha in reader:
+                nome, cpf, rg, dataNascimento, salario, formacao, tipoDeVinculo = linha
+
+                professor = Professor(nome, cpf, rg, dataNascimento, salario, formacao, tipoDeVinculo)
+                self.pessoas.append(professor)
 
     # Métodos da listagem
     def __getitem__(self, pessoa):
-        print(self.__pessoas[pessoa])
-        return self.__pessoas[pessoa]
+        print(self.pessoas[pessoa])
+        return self.pessoas[pessoa]
         
 
     def __len__(self):
-        print("A quantidade de pessoas no registro é: " + str(len(self.__pessoas)))
-        return len(self.__pessoas)
-
-
-### TESTES ###
-
-
-
-# Eduardo = Aluno("Eduardo", "12345678901", "12345678901", "01/01/01", "12345678", "3ºA", "Manhã")
-# Pedro = Aluno("Pedro", "12345678900", "12345678900", "00/00/00", "123345670", "", "")
-# Joao = Funcionario("João", "12345678902", "12345678902", "02/02/02", 3000.00, "Zelador", "6:30 às 12:30")
-# Maria = Professor("Maria", "12345678903", "12345678903", "03/03/03", 3000.00, "Mestrado", None)
-
-# escola = Escola()
-
-# escola.adicionarPessoa(Eduardo)
-# escola.adicionarPessoa(Joao)
-# escola.adicionarPessoa(Maria)
-
-# escola.solicitaAcesso("12345678")
-
-# AlunoDAO.salvar(Eduardo)
-# AlunoDAO.salvar(Pedro)
-
-# FuncionarioDAO.salvar(Joao)
-
-# ProfessorDAO.salvar(Maria)
-
-# escola.__len__()
+        print("A quantidade de pessoas no registro é: " + str(len(self.pessoas)))
+        return len(self.pessoas)

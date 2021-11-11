@@ -4,7 +4,7 @@ arquivo = File("DesafioEscolaCompleto/BancoDeDados/professores.csv")
 
 class ProfessorDAO(object):
     def salvar(pessoa):
-        Appender(arquivo).append(pessoa.__str__(), True)
+        Appender(arquivo).append(pessoa.__str__(), False)
 
 
     def listar():
