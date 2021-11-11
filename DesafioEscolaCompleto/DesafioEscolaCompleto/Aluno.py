@@ -38,4 +38,4 @@ class Aluno(PessoaFisica):
 
 
     def __str__(self) -> str:
-        return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.cgm},{self.turma},{self.turno}"
+        return f"{self.nome},{self.cpf},{self.rg},{self.dataNascimento},{self.cgm},{self.turma},{self.turno}\n"
