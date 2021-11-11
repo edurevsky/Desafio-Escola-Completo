@@ -8,6 +8,7 @@ from ProfessorDAO import ProfessorDAO
 
 import csv
 
+
 # Class "Escola" deve agir como uma lista
 class Escola(object):
     
@@ -21,14 +22,19 @@ class Escola(object):
     def adicionarPessoa(self, pessoa):
         self.pessoas.append(pessoa)
 
+    # ======================================
     def solicitaAcesso(self, codigoAcesso):
+        achou = 0
         i = 0
         while i < len(self.pessoas):
             for pessoa in self.pessoas:
-                pessoa.acessarEscola(codigoAcesso)
+                if pessoa.acessarEscola(codigoAcesso) == True:
+                    achou = 1
                 i += 1
+            if achou == 0:
+                print("acesso negado")
 
-    # Listagem
+    # Listagem =============================
     def listarAlunos(self):
         AlunoDAO.listar()
 
@@ -77,7 +83,7 @@ class Escola(object):
                 professor = Professor(nome, cpf, rg, dataNascimento, salario, formacao, tipoDeVinculo)
                 self.pessoas.append(professor)
 
-    # Métodos da listagem
+    # Métodos da listagem ===============================================
     def __getitem__(self, pessoa):
         print(self.pessoas[pessoa])
         return self.pessoas[pessoa]
