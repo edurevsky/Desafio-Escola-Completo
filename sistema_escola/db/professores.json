@@ -1,0 +1,11 @@
+[
+    {
+        "nome": "Xavier",
+        "cpf": "456",
+        "rg": "456",
+        "dataNascimento": "01/01/01",
+        "salario": "9000",
+        "formacao": "null",
+        "tipoDeVinculo": "null"
+    }
+]

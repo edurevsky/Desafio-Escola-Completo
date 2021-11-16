@@ -1,0 +1,11 @@
+[
+    {
+        "nome": "Mutano",
+        "cpf": "567",
+        "rg": "567",
+        "dataNascimento": "02/02/02",
+        "salario": "2000",
+        "cargo": "null",
+        "horarioTrabalho": "null"
+    }
+]

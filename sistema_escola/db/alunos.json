@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "Eduardo",
+        "cpf": "123",
+        "rg": "123",
+        "dataNascimento": "09/08/2004",
+        "cgm": "1111",
+        "turma": "3",
+        "turno": "Manh\u00e3"
+    },
+    {
+        "nome": "Fulano",
+        "cpf": "234",
+        "rg": "234",
+        "dataNascimento": "01/01/01",
+        "cgm": "2222",
+        "turma": "1",
+        "turno": "Tarde"
+    }
+]
