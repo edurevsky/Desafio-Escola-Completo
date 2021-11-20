@@ -33,14 +33,10 @@ def escola() -> list:
     return pessoas
 
 
-def addEscola(escola, pessoa) -> None:
-    escola.append(pessoa)
-
-
 def listarTodos(escola) -> None:
     for p in escola:
         for i in p:
-            print(f'{i}\n')
+            print(i)
 
 
 def listarAlunos(escola) -> None:
@@ -88,7 +84,6 @@ def registarAluno(escola) -> None:
 
     aluno = _newAluno(nome, idade, cpf, cgm, turma, turno)
     _dictParaArquivo(aluno)
-    addEscola(escola, aluno)
 
 
 def registrarProfessor(escola) -> None:
@@ -101,7 +96,6 @@ def registrarProfessor(escola) -> None:
 
     prof = _newProfessor(nome, idade, cpf, salario, formacao, vinculo)
     _dictParaArquivo(prof)
-    addEscola(escola, prof)
 
 
 def registrarFuncionario(escola) -> None:
@@ -114,17 +108,17 @@ def registrarFuncionario(escola) -> None:
 
     func = _newFuncionario(nome, idade, cpf, salario, cargo, horario)
     _dictParaArquivo(func)
-    addEscola(escola, func)
+
 
 
 if __name__ == '__main__':
 
-    esc = escola()
     print('Programação Estruturada')
     print('Sistema Escola - V: 0.0.1\n')
 
     rodando = 1
     while rodando:
+        esc = escola()
 
         print('Escola Tal')
         print('Comandos:')
