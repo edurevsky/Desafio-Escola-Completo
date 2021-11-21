@@ -108,14 +108,14 @@ def registrarFuncionario() -> None:
     _dictParaArquivo(func)
 
 
-def _lastLog(pessoa):
+def _lastLog(pessoa) -> None:
     hora = datetime.now()
     with open('ultimo_registro.txt', 'w+') as f:
         f.write(f'{pessoa["tipo"]} {pessoa["nome"]} - {hora}')
     f.close()
 
 
-def acessarEscola(esc):
+def acessarEscola(esc) -> None:
     cod = str(input('Digite o código de acesso: '))
     achou = 0
     for a in esc:
@@ -137,29 +137,28 @@ def acessarEscola(esc):
         raise Exception(e)
 
 
-if __name__ == '__main__':
+def comandos():
+    print('Escola Tal')
+    print('Comandos:')
+    print('[1] - Registar Novo Aluno')
+    print('[2] - Registar Novo Professor')
+    print('[3] - Registar Novo Funcionário')
+    print('[4] - Listar Todos')
+    print('[5] - Listar Alunos')
+    print('[6] - Listar Professores')
+    print('[7] - Listar Funcionários')
+    print('[8] - Acessar Escola')
+    print('[0] - Sair')
 
-    print('Programação Estruturada')
-    print('Sistema Escola - V: 0.0.1\n')
+
+if __name__ == '__main__':
 
     rodando = 1
     while rodando:
         esc = escola()
         try:
-
-            print('Escola Tal')
-            print('Comandos:')
-            print('[1] - Registar Novo Aluno')
-            print('[2] - Registar Novo Professor')
-            print('[3] - Registar Novo Funcionário')
-            print('[4] - Listar Todos')
-            print('[5] - Listar Alunos')
-            print('[6] - Listar Professores')
-            print('[7] - Listar Funcionários')
-            print('[8] - Acessar Escola')
-            print('[0] - Sair')
-
-            comando = int(input('Digite o comando: '))
+            comandos()
+            comando = int(input('Digite o comando >> '))
 
             if comando == 1:
                 registarAluno()
