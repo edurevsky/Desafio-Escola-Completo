@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 
 
@@ -45,7 +46,6 @@ def listarAlunos(escola) -> None:
         for p in x:
             if p['tipo'] == 'aluno':
                 print(p)
-    print('\n')
 
 
 def listarProfessores(escola) -> None:
@@ -54,7 +54,6 @@ def listarProfessores(escola) -> None:
         for p in x:
             if p['tipo'] == 'prof':
                 print(p)
-    print('\n')
 
 
 def listarFuncionarios(escola) -> None:
@@ -63,7 +62,6 @@ def listarFuncionarios(escola) -> None:
         for p in x:
             if p['tipo'] == 'func':
                 print(p)
-    print('\n')
 
 
 def _dictParaArquivo(aluno) -> None:
@@ -108,6 +106,35 @@ def registrarFuncionario() -> None:
 
     func = _newFuncionario(nome, idade, cpf, salario, cargo, horario)
     _dictParaArquivo(func)
+
+
+def _lastLog(pessoa):
+    hora = datetime.now()
+    with open('ultimo_registro.txt', 'w+') as f:
+        f.write(f'{pessoa["tipo"]} {pessoa["nome"]} - {hora}')
+    f.close()
+
+
+def acessarEscola(esc):
+    cod = str(input('Digite o código de acesso: '))
+    achou = 0
+    for a in esc:
+        for b in a:
+            if cod == b['cod'] and b['tipo'] == 'prof':
+                achou = 1
+                print(f'Boa aula Professor(a) {b["nome"]}!')
+                _lastLog(b)
+            elif cod == b['cod'] and b['tipo'] == 'aluno':
+                achou = 1
+                print(f'Boa aula Aluno(a) {b["nome"]}!')
+                _lastLog(b)
+            elif cod == b['cod'] and b['tipo'] == 'func':
+                achou = 1
+                print(f'Bom trabalho {b["nome"]}!')
+                _lastLog(b)
+    if achou == 0:
+        e = f'Acesso negado! Código {cod} não está na lista!'
+        raise Exception(e)
 
 
 if __name__ == '__main__':
@@ -156,25 +183,7 @@ if __name__ == '__main__':
                 listarFuncionarios(esc)
 
             elif comando == 8:
-                cod = str(input('Digite o código de acesso: '))
-                achou = 0
-                for a in esc:
-                    for b in a:
-                        if cod == b['cod'] and b['tipo'] == 'prof':
-                            achou = 1
-                            print(f'Boa aula Professor(a) {b["nome"]}!')
-
-                        elif cod == b['cod'] and b['tipo'] == 'aluno':
-                            achou = 1
-                            print(f'Boa aula Aluno(a) {b["nome"]}!')
-
-                        elif cod == b['cod'] and b['tipo'] == 'func':
-                            achou = 1
-                            print(f'Bom trabalho {b["nome"]}!')
-
-                if achou == 0:
-                    e = f'Acesso negado! Código {cod} não está na lista!'
-                    raise Exception(e)
+                acessarEscola(esc)
 
             elif comando == 0:
                 rodando = 0
