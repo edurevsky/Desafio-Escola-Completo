@@ -1,29 +1,22 @@
 [
     {
-        "nome": "fulano",
-        "idade": 14,
-        "cpf": "111",
-        "cgm": "111",
-        "turma": "1",
-        "turno": "manha",
-        "tipo": "aluno"
+        "nome": "Fulano",
+        "idade": 16,
+        "cpf": "01234567890",
+        "cgm": "1111",
+        "turma": "3",
+        "turno": "Tarde",
+        "tipo": "aluno",
+        "cod": "1111"
     },
     {
         "nome": "Ciclano",
-        "idade": 17,
-        "cpf": "222",
-        "cgm": "222",
-        "turma": "3",
-        "turno": "manha",
-        "tipo": "aluno"
-    },
-    {
-        "nome": "Beltrano",
         "idade": 34,
-        "cpf": "333",
-        "salario": 3500.0,
-        "formacao": "mestrado",
-        "vinculo": "sla",
-        "tipo": "prof"
+        "cpf": "55555555555",
+        "salario": 3700.0,
+        "formacao": "None",
+        "vinculo": "None",
+        "tipo": "prof",
+        "cod": "55555555555"
     }
 ]
