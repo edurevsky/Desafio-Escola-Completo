@@ -9,19 +9,19 @@ def __newPessoa(nome, idade, cpf) -> dict:
 
 def _newAluno(nome, idade, cpf, cgm, turma, turno) -> dict:
     aluno = __newPessoa(nome, idade, cpf)
-    aluno['cgm'] = cgm; aluno['turma'] = turma; aluno['turno'] = turno; aluno['tipo'] = 'aluno'
+    aluno['cgm'] = cgm; aluno['turma'] = turma; aluno['turno'] = turno; aluno['tipo'] = 'aluno'; aluno['cod'] = cgm
     return aluno
 
 
 def _newProfessor(nome, idade, cpf, salario, formacao, vinculo) -> dict:
     prof = __newPessoa(nome, idade, cpf)
-    prof['salario'] = salario; prof['formacao'] = formacao; prof['vinculo'] = vinculo; prof['tipo'] = 'prof'
+    prof['salario'] = salario; prof['formacao'] = formacao; prof['vinculo'] = vinculo; prof['tipo'] = 'prof'; prof['cod'] = cpf
     return prof
 
 
 def _newFuncionario(nome, idade, cpf, salario, cargo, horario) -> dict:
     func = __newPessoa(nome, idade, cpf)
-    func['salario'] = salario; func['cargo'] = cargo; func['horario'] = horario; func['tipo'] = 'func'
+    func['salario'] = salario; func['cargo'] = cargo; func['horario'] = horario; func['tipo'] = 'func'; func['cod'] = cpf
     return func
 
 
@@ -74,7 +74,7 @@ def _dictParaArquivo(aluno) -> None:
             json.dump(dados, b, indent=4)
 
 
-def registarAluno(escola) -> None:
+def registarAluno() -> None:
     nome = input('Digite o nome: ')
     idade = int(input('Digite a idade: '))
     cpf = input('Digite o CPF: ')
@@ -86,7 +86,7 @@ def registarAluno(escola) -> None:
     _dictParaArquivo(aluno)
 
 
-def registrarProfessor(escola) -> None:
+def registrarProfessor() -> None:
     nome = input('Digite o nome: ')
     idade = int(input('Digite a idade: '))
     cpf = input('Digite o CPF: ')
@@ -98,7 +98,7 @@ def registrarProfessor(escola) -> None:
     _dictParaArquivo(prof)
 
 
-def registrarFuncionario(escola) -> None:
+def registrarFuncionario() -> None:
     nome = input('Digite o nome: ')
     idade = int(input('Digite a idade: '))
     cpf = input('Digite o CPF: ')
@@ -110,7 +110,6 @@ def registrarFuncionario(escola) -> None:
     _dictParaArquivo(func)
 
 
-
 if __name__ == '__main__':
 
     print('Programação Estruturada')
@@ -119,43 +118,71 @@ if __name__ == '__main__':
     rodando = 1
     while rodando:
         esc = escola()
+        try:
 
-        print('Escola Tal')
-        print('Comandos:')
-        print('[1] - Registar Novo Aluno')
-        print('[2] - Registar Novo Professor')
-        print('[3] - Registar Novo Funcionário')
-        print('[4] - Listar Todos')
-        print('[5] - Listar Alunos')
-        print('[6] - Listar Professores')
-        print('[7] - Listar Funcionários')
-        print('[0] - Sair')
+            print('Escola Tal')
+            print('Comandos:')
+            print('[1] - Registar Novo Aluno')
+            print('[2] - Registar Novo Professor')
+            print('[3] - Registar Novo Funcionário')
+            print('[4] - Listar Todos')
+            print('[5] - Listar Alunos')
+            print('[6] - Listar Professores')
+            print('[7] - Listar Funcionários')
+            print('[8] - Acessar Escola')
+            print('[0] - Sair')
 
-        comando = int(input('Digite o comando: '))
+            comando = int(input('Digite o comando: '))
 
-        if comando == 1:
-            registarAluno(esc)
+            if comando == 1:
+                registarAluno()
 
-        elif comando == 2:
-            registrarProfessor(esc)
+            elif comando == 2:
+                registrarProfessor()
 
-        elif comando == 3:
-            registrarFuncionario(esc)
+            elif comando == 3:
+                registrarFuncionario()
 
-        elif comando == 4:
-            listarTodos(esc)
+            elif comando == 4:
+                listarTodos(esc)
 
-        elif comando == 5:
-            listarAlunos(esc)
+            elif comando == 5:
+                listarAlunos(esc)
 
-        elif comando == 6:
-            listarProfessores(esc)
+            elif comando == 6:
+                listarProfessores(esc)
 
-        elif comando == 7:
-            listarFuncionarios(esc)
+            elif comando == 7:
+                listarFuncionarios(esc)
 
-        elif comando == 0:
-            rodando = 0
+            elif comando == 8:
+                cod = str(input('Digite o código de acesso: '))
+                achou = 0
+                for a in esc:
+                    for b in a:
+                        if cod == b['cod'] and b['tipo'] == 'prof':
+                            achou = 1
+                            print(f'Boa aula Professor(a) {b["nome"]}!')
 
-        else:
-            raise ValueError('Comando não existe.')
+                        elif cod == b['cod'] and b['tipo'] == 'aluno':
+                            achou = 1
+                            print(f'Boa aula Aluno(a) {b["nome"]}!')
+
+                        elif cod == b['cod'] and b['tipo'] == 'func':
+                            achou = 1
+                            print(f'Bom trabalho {b["nome"]}!')
+
+                if achou == 0:
+                    e = f'Acesso negado! Código {cod} não está na lista!'
+                    raise Exception(e)
+
+            elif comando == 0:
+                rodando = 0
+
+            else:
+                raise ValueError('Comando não existe.')
+
+        except ValueError as e:
+            print(e)
+        except Exception as e:
+            print(e)
